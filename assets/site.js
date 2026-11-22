@@ -120,6 +120,100 @@
   }
 
   /* -------------------------------------------------------
+     Booking modal
+     ------------------------------------------------------- */
+
+  const bookingModal = document.getElementById("bookingModal");
+  const bookingDialog = bookingModal ? bookingModal.querySelector(".booking-modal__dialog") : null;
+  const bookingClose = bookingModal ? bookingModal.querySelector(".booking-modal__close") : null;
+
+  let bookingTrigger = null;
+
+  const getBookingFocusable = () => {
+    if (!bookingModal) return [];
+    return Array.from(
+      bookingModal.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
+    ).filter((element) => element.getClientRects().length > 0);
+  };
+
+  const openBooking = (trigger) => {
+    if (!bookingModal) return;
+
+    bookingTrigger = trigger;
+    bookingModal.classList.add("is-open");
+    bookingModal.removeAttribute("aria-hidden");
+    bookingModal.inert = false;
+    body.classList.add("modal-open");
+
+    if (bookingDialog) bookingDialog.scrollTop = 0;
+
+    window.setTimeout(() => {
+      if (bookingClose) bookingClose.focus({ preventScroll: true });
+    }, 80);
+  };
+
+  const closeBooking = () => {
+    if (!bookingModal || !bookingModal.classList.contains("is-open")) return;
+
+    bookingModal.classList.remove("is-open");
+    bookingModal.setAttribute("aria-hidden", "true");
+    body.classList.remove("modal-open");
+
+    let returnTarget = bookingTrigger;
+    if (!returnTarget || !returnTarget.getClientRects().length) {
+      returnTarget = document.querySelector(".header__cta");
+    }
+    if (!returnTarget || !returnTarget.getClientRects().length) {
+      returnTarget = navToggle;
+    }
+    if (returnTarget) returnTarget.focus({ preventScroll: true });
+
+    bookingModal.inert = true;
+    bookingTrigger = null;
+  };
+
+  if (bookingModal) {
+    document.querySelectorAll("[data-open-booking]").forEach((trigger) => {
+      trigger.setAttribute("aria-haspopup", "dialog");
+      trigger.setAttribute("aria-controls", "bookingModal");
+      trigger.addEventListener("click", (event) => {
+        event.preventDefault();
+        openBooking(trigger);
+      });
+    });
+
+    bookingModal.querySelectorAll("[data-close-booking]").forEach((closer) => {
+      closer.addEventListener("click", closeBooking);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (!bookingModal.classList.contains("is-open")) return;
+
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeBooking();
+        return;
+      }
+
+      if (event.key !== "Tab") return;
+
+      const focusable = getBookingFocusable();
+      if (!focusable.length) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
+  }
+
+  /* -------------------------------------------------------
      Reveal on scroll
      ------------------------------------------------------- */
 
@@ -195,7 +289,7 @@
   }
 
   /* -------------------------------------------------------
-     Copy the appointment message
+     Copy address / booking text
      ------------------------------------------------------- */
 
   const toast = document.querySelector(".toast");
@@ -246,10 +340,11 @@
   document.querySelectorAll("[data-copy]").forEach((button) => {
     button.addEventListener("click", async () => {
       const text = button.getAttribute("data-copy") || "";
+      const successMessage = button.getAttribute("data-copy-message") || "预约暗号已复制，发给店主就能对上暗号。";
       const copied = await copyText(text);
       showToast(
         copied
-          ? "预约暗号已复制，发给店主就能对上暗号。"
+          ? successMessage
           : "这个浏览器不允许自动复制，请手动复制预约信息。"
       );
     });

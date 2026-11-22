@@ -39,14 +39,14 @@
         <a class="nav-link" href="#craft">关于手艺 <span>01</span></a>
         <a class="nav-link" href="#builds">本命作品 <span>02</span></a>
         <a class="nav-link" href="#space">店内空间 <span>03</span></a>
-        <a class="nav-link" href="#menu">价目表 <span>04</span></a>
+        <a class="nav-link" href="#repair">维修服务 <span>04</span></a>
         <a class="nav-link" href="#process">附魔流程 <span>05</span></a>
-        <a class="primary-nav__cta" href="#visit">预约到店 <span aria-hidden="true">↗</span></a>
+        <a class="primary-nav__cta" href="#visit" data-open-booking>预约到店 <span aria-hidden="true">↗</span></a>
         <p class="primary-nav__note">只做外观文化，不负责超度。</p>
       </nav>
 
       <div class="header__actions">
-        <a class="header__cta" href="#visit">预约到店 <span aria-hidden="true">↗</span></a>
+        <a class="header__cta" href="#visit" data-open-booking>预约到店 <span aria-hidden="true">↗</span></a>
         <button class="nav-toggle" type="button" aria-controls="primaryNav" aria-expanded="false" aria-label="打开菜单">
           <span></span>
           <span></span>
@@ -79,7 +79,7 @@
           <div class="hero__body">
             <p class="hero__lede">从一颗键帽的配色，到一整只壳体的手工复刻。硬件屋把量产键盘，打磨成只属于你的传说级武器。</p>
             <div class="hero__actions">
-              <a class="btn btn--primary" href="#menu">查看价目表 <span class="btn__arrow" aria-hidden="true">↘</span></a>
+              <a class="btn btn--primary" href="#visit" data-open-booking>预约到店 <span class="btn__arrow" aria-hidden="true">↗</span></a>
               <a class="btn btn--ghost" href="#builds">翻看本命作品</a>
             </div>
             <ul class="hero__tags" aria-label="主要服务">
@@ -475,137 +475,20 @@
       </div>
     </section>
 
-    <!-- MENU -->
-    <section class="section menu" id="menu">
+    <!-- REPAIR -->
+    <section class="section repair-section" id="repair">
       <div class="shell">
-        <div class="menu__head">
-          <div data-reveal>
-            <p class="section-kicker"><span class="num">04</span> Enchantment Menu / 附魔菜单</p>
-            <h2 class="display display--big">价目表<span class="pink-dot">。</span></h2>
-          </div>
-          <div class="menu__quote" data-reveal style="--d:.1s">
-            <span aria-hidden="true">“</span>
-            <p>要为你的本命武器<br>附魔吗？</p>
-            <small>—— 硬件屋，欢迎光临</small>
-          </div>
-        </div>
-
-        <div class="menu__layout">
-          <aside class="menu__poster-wrap" data-reveal>
-            <figure class="menu-poster">
-              <picture>
-                <source srcset="assets/img/price-card.webp" type="image/webp">
-                <img src="assets/img/price-card.jpg" width="1200" height="1600" alt="硬件屋原版价目卡，包含基础转生、属性附魔、终极幻化与隐藏掉落" loading="lazy" decoding="async">
-              </picture>
-              <figcaption>
-                <span>ORIGINAL MENU CARD</span>
-                <strong>店里的原版价目卡</strong>
-              </figcaption>
-            </figure>
-            <p class="menu__poster-note">价格是参考，好看是刚需。<br>具体方案，坐下慢慢聊。</p>
-          </aside>
-
-          <div class="menu__list" data-reveal style="--d:.08s">
-            <article class="menu-row">
-              <div class="menu-row__side">
-                <span class="menu-row__lv">LV.1</span>
-                <span class="menu-row__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-                    <rect x="3.5" y="6.5" width="17" height="13" rx="2.5"/>
-                    <path d="M7.5 10.5h9M7.5 13.5h5.5"/>
-                  </svg>
-                </span>
-              </div>
-              <div class="menu-row__main">
-                <p class="menu-row__en">Basic Rebirth</p>
-                <h3>基础转生 <span class="menu-row__tag">键帽</span></h3>
-                <p class="menu-row__desc">告别战损成色，回归出厂状态。</p>
-              </div>
-              <div class="menu-row__price">
-                <span>参考价</span>
-                <strong><small>¥</small>299<em>–</em>499</strong>
-              </div>
-            </article>
-
-            <article class="menu-row menu-row--featured">
-              <div class="menu-row__side">
-                <span class="menu-row__lv">LV.30</span>
-                <span class="menu-row__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-                    <path d="M8 9.5h7v11H8z"/>
-                    <path d="M10 9.5V6h3v3.5M18 8h1.5M18 11h1.5M18 14h1.5"/>
-                  </svg>
-                </span>
-              </div>
-              <div class="menu-row__main">
-                <p class="menu-row__en">Attribute Enchantment <span class="menu-row__hot">人气</span></p>
-                <h3>属性附魔 <span class="menu-row__tag">壳子</span></h3>
-                <p class="menu-row__desc">自选魔力色彩，街上最靓打字机。</p>
-              </div>
-              <div class="menu-row__price">
-                <span>参考价</span>
-                <strong><small>¥</small>699</strong>
-              </div>
-            </article>
-
-            <article class="menu-row">
-              <div class="menu-row__side">
-                <span class="menu-row__lv">ULT.</span>
-                <span class="menu-row__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-                    <path d="m8 16-4 4M6.5 14.5 9.5 17.5M8 16l-1.5-1.5L17.5 3.5 21 3l-.5 3.5L9.5 17.5"/>
-                  </svg>
-                </span>
-              </div>
-              <div class="menu-row__main">
-                <p class="menu-row__en">Ultimate Illusion</p>
-                <h3>终极幻化 <span class="menu-row__tag">定制</span></h3>
-                <p class="menu-row__desc">传说大师手工复刻勇者武器。</p>
-              </div>
-              <div class="menu-row__price">
-                <span>参考价</span>
-                <strong><small>¥</small>499</strong>
-              </div>
-            </article>
-
-            <article class="menu-row">
-              <div class="menu-row__side">
-                <span class="menu-row__lv">???</span>
-                <span class="menu-row__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-                    <rect x="4" y="4" width="16" height="16" rx="2"/>
-                    <path d="M9.5 9.2A2.7 2.7 0 0 1 14.7 11c0 1.7-2.2 2-2.2 3.4v.3"/>
-                    <circle cx="12.3" cy="17.4" r=".7" fill="currentColor" stroke="none"/>
-                  </svg>
-                </span>
-              </div>
-              <div class="menu-row__main">
-                <p class="menu-row__en">Hidden Drop</p>
-                <h3>隐藏掉落 <span class="menu-row__tag">设计</span></h3>
-                <p class="menu-row__desc">完全交给 NPC 发挥，非欧皇慎入！</p>
-              </div>
-              <div class="menu-row__price">
-                <span>参考价</span>
-                <strong><small>¥</small>299<em>–</em>499</strong>
-              </div>
-            </article>
-
-            <p class="menu__fine"><span aria-hidden="true">✦</span> 以上为参考价，最终以实际方案、工艺与耗时为准。价目卡中的 G 为店内金币单位，具体金额以店主报价为准。只做外观文化，不提供物理超度服务。</p>
-          </div>
-        </div>
-
-        <aside class="repair-band" id="repair" data-reveal>
+        <aside class="repair-band" data-reveal>
           <div class="repair-band__logo">
             <img src="assets/img/logo-repair.png" width="900" height="831" alt="硬件屋维修服务标志" loading="lazy" decoding="async">
           </div>
           <div class="repair-band__copy">
-            <p class="repair-band__kicker">Maintenance / 维修服务</p>
+            <p class="repair-band__kicker">04 / Maintenance / 维修服务</p>
             <h3>键盘不舒服？<br>带来给硬件屋看看。</h3>
             <p>键盘维修与保养相关，具体项目、周期和报价，请到店沟通。</p>
           </div>
-          <a class="repair-band__cta" href="#visit">到店咨询 <span aria-hidden="true">↗</span></a>
+          <a class="repair-band__cta" href="#visit" data-open-booking>到店咨询 <span aria-hidden="true">↗</span></a>
         </aside>
-
       </div>
     </section>
 
@@ -657,7 +540,7 @@
 
         <div class="process__foot" data-reveal>
           <p>带着你的键盘、你的本命，或者一张截图来。</p>
-          <a class="btn btn--ink" href="#visit">预约到店 <span class="btn__arrow" aria-hidden="true">↗</span></a>
+          <a class="btn btn--ink" href="#visit" data-open-booking>预约到店 <span class="btn__arrow" aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
@@ -675,11 +558,22 @@
           <h2 class="display display--light">下一把，<br>写<em>你的名字</em>。</h2>
           <p class="visit__text">带着你的键盘、你的本命、或者一张截图来。硬件屋等你，把想法变成一把每天都会想敲的键盘。</p>
           <div class="visit__actions">
-            <a class="btn btn--primary" href="#menu">看看价目表 <span class="btn__arrow" aria-hidden="true">↘</span></a>
-            <button class="btn btn--ghost" type="button" data-copy="你好，我想预约到硬件屋，聊聊键盘定制。请问最近方便到店吗？">复制预约暗号 <span aria-hidden="true">⧉</span></button>
+            <a class="btn btn--primary" href="#visit" data-open-booking>预约到店 <span class="btn__arrow" aria-hidden="true">↗</span></a>
+            <a class="btn btn--ghost" href="tel:18810080327">拨打电话 <span aria-hidden="true">↗</span></a>
           </div>
-          <!-- 预约信息：可在这里替换成实际微信号 / 地址 / 营业时间 -->
-          <p class="visit__note"><span aria-hidden="true">●</span> 北京 · 预约制 · 地址、营业时间与档期，请直接联系店主。</p>
+
+          <div class="visit__contact">
+            <div class="visit__contact-row">
+              <span>联系电话</span>
+              <a href="tel:18810080327">188 1008 0327</a>
+            </div>
+            <div class="visit__contact-row">
+              <span>店铺地址</span>
+              <p>朝阳区北京城区望京东园五区<br>502号楼10号店</p>
+            </div>
+          </div>
+
+          <p class="visit__note"><span aria-hidden="true">●</span> 预约制 · 建议先电话联系，确认到店时间。</p>
         </div>
       </div>
     </section>
@@ -703,8 +597,7 @@
           <a href="#builds">本命作品</a>
           <a href="#drops">新作上架</a>
           <a href="#repair">维修服务</a>
-          <a href="#menu">价目表</a>
-          <a href="#visit">预约到店</a>
+          <a href="#visit" data-open-booking>预约到店</a>
         </nav>
 
         <a class="footer__top-link" href="#top">回到顶部 <span aria-hidden="true">↑</span></a>
@@ -719,6 +612,58 @@
       </div>
     </div>
   </footer>
+
+  <!-- BOOKING MODAL -->
+  <div class="booking-modal" id="bookingModal" aria-hidden="true" inert>
+    <div class="booking-modal__backdrop" data-close-booking></div>
+    <div class="booking-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="bookingTitle" aria-describedby="bookingDesc" tabindex="-1">
+      <button class="booking-modal__close" type="button" aria-label="关闭预约弹窗" data-close-booking>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+          <path d="M6 6l12 12M18 6 6 18"/>
+        </svg>
+      </button>
+
+      <div class="booking-modal__intro">
+        <p class="booking-modal__kicker">Visit / 预约到店</p>
+        <h2 id="bookingTitle">来硬件屋，<br><em>坐坐聊聊。</em></h2>
+        <p id="bookingDesc">到店前建议先电话联系，确认档期，免得白跑一趟。</p>
+      </div>
+
+      <div class="booking-modal__body">
+        <figure class="booking-modal__map">
+          <picture>
+            <source srcset="assets/img/store-map.webp" type="image/webp">
+            <img src="assets/img/store-map.jpg" width="1514" height="906" alt="硬件屋在望京东园五区附近的地图" loading="lazy" decoding="async">
+          </picture>
+          <figcaption><span>LOCATION</span> 望京东园五区 · 502号楼</figcaption>
+        </figure>
+
+        <div class="booking-modal__details">
+          <div class="booking-contact">
+            <div class="booking-contact__row">
+              <span class="booking-contact__label">联系电话</span>
+              <a class="booking-contact__phone" href="tel:18810080327">188 1008 0327</a>
+            </div>
+            <div class="booking-contact__row">
+              <span class="booking-contact__label">店铺地址</span>
+              <address>朝阳区北京城区望京东园五区<br>502号楼10号店</address>
+            </div>
+            <div class="booking-contact__row">
+              <span class="booking-contact__label">到店方式</span>
+              <p>预约制 · 请提前电话联系，确认到店时间。</p>
+            </div>
+          </div>
+
+          <div class="booking-modal__actions">
+            <a class="btn btn--primary" href="tel:18810080327">拨打电话 <span class="btn__arrow" aria-hidden="true">↗</span></a>
+            <button class="btn btn--ghost-dark" type="button" data-copy="朝阳区北京城区望京东园五区502号楼10号店" data-copy-message="店铺地址已复制，导航时粘贴即可。">复制地址 <span aria-hidden="true">⧉</span></button>
+          </div>
+
+          <p class="booking-modal__fine">如需维修，也可以带上键盘一起来。具体项目与报价请店内沟通。</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="toast" role="status" aria-live="polite"></div>
   <script src="assets/site.js"></script>
