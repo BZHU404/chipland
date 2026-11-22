@@ -1535,7 +1535,7 @@ main section[id] {
 
 .drops__grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 19px;
   margin-top: clamp(34px, 4vw, 50px);
 }
@@ -3113,13 +3113,6 @@ main section[id] {
     gap: 14px;
   }
 
-  .drop-card:last-child {
-    grid-column: 1 / -1;
-  }
-
-  .drop-card:last-child .drop-card__media {
-    aspect-ratio: 16 / 8.6;
-  }
 
   .drop-card__desc {
     max-width: none;
