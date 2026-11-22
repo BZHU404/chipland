@@ -22,7 +22,7 @@ python3 -m http.server 8000
 ├── assets/
 │   ├── site.css        # 全部样式与响应式布局
 │   ├── site.js         # 导航、滚动动效、预约弹窗、复制地址/预约暗号
-│   └── img/            # 13 张作品/空间照片（jpg + webp）+ 店铺地图 + 4 个 logo 文件
+│   └── img/            # 14 张作品/空间照片（jpg + webp）+ 店铺地图 + 4 个 logo 文件
 ├── preview.jpg         # 首屏预览图
 ├── preview-drops.jpg   # 新作上架区域预览图
 ├── preview-repair.jpg  # 维修服务区域预览图
