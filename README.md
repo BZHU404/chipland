@@ -22,12 +22,13 @@ python3 -m http.server 8000
 ├── assets/
 │   ├── site.css        # 全部样式与响应式布局
 │   ├── site.js         # 导航、滚动动效、预约弹窗、复制地址/预约暗号
-│   └── img/            # 14 张作品/空间照片（jpg + webp）+ 店铺地图 + 4 个 logo 文件
+│   └── img/            # 18 张作品/空间照片（jpg + webp）+ 店铺地图 + 4 个 logo 文件
 ├── preview.jpg         # 首屏预览图
 ├── preview-drops.jpg   # 新作上架区域预览图
 ├── preview-repair.jpg  # 维修服务区域预览图
 ├── preview-visit.jpg   # 到店区域预览图
 ├── preview-booking.jpg # 预约弹窗预览图
+├── preview-builds.jpg  # 新增作品区域预览图
 └── README.md
 ```
 
@@ -42,6 +43,7 @@ python3 -m http.server 8000
 
 - 响应式布局：桌面 / 平板 / 手机（含 320px 小屏）
 - 本命作品陈列 + 新作上架（移动端可横向滑动）
+- 新增 Wooting 60HE V2 石中剑、夜魔 × 明日香作品
 - 「预约到店」弹窗：电话、地址、地图、复制地址
 - 到店区域直接展示地址/电话，底部保留「复制预约暗号」
 - 已移除旧价目表页面

@@ -1266,8 +1266,13 @@ main section[id] {
 }
 
 .build-card:nth-child(1),
-.build-card:nth-child(4) {
+.build-card:nth-child(4),
+.build-card:nth-child(5) {
   grid-column: span 7;
+}
+
+.build-card--asuka > .build-card__media:first-of-type img {
+  object-position: 66% center;
 }
 
 .build-card__media {
@@ -3257,7 +3262,8 @@ main section[id] {
 
   .build-card,
   .build-card:nth-child(1),
-  .build-card:nth-child(4) {
+  .build-card:nth-child(4),
+  .build-card:nth-child(5) {
     grid-column: auto;
     height: min(112vw, 480px);
   }
